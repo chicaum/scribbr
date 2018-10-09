@@ -30,3 +30,7 @@ yarn-error.log
 .idea
 .idea/
 .DS_Store
+
+###> docker ###
+.docker/data/*
+###< docker ###
