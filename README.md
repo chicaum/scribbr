@@ -45,10 +45,16 @@ docker-compose up -d
 ## Access the application
 
 ```
-localhost:8011
+http://localhost:8011
 ```
 
-## Database - MySQL 5.6
+## Access the application documentation
+
+```
+http://localhost:8011/admin/
+```
+
+## Database access - MySQL 5.6
 
 ```
 user: root

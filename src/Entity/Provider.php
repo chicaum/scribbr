@@ -31,6 +31,14 @@ class Provider
      */
     private $active;
 
+    /**
+     * Provider constructor.
+     */
+    public function __construct()
+    {
+        $this->active = true;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
