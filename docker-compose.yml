@@ -1,0 +1,40 @@
+version: "3"
+services:
+  fpm:
+    build:
+      context: .
+      dockerfile: Dockerfile-php
+    environment:
+    - DATABASE_URL=mysql://root:root@db:3306/scribbr
+    volumes:
+    - ./:/var/www/project/
+    networks:
+    - symfony
+
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
+    volumes:
+      - ./:/var/www/project/
+    ports:
+      - 8055:80
+    networks:
+      - symfony
+
+  db:
+    image: mysql:5.6
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_DATABASE: scribbr
+    volumes:
+      - .docker/data/db:/var/lib/mysql
+    ports:
+      - 3311:3306
+    networks:
+      - symfony
+
+networks:
+  symfony:
