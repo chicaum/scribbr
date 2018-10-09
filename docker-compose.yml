@@ -18,7 +18,7 @@ services:
     volumes:
       - ./:/var/www/project/
     ports:
-      - 8055:80
+      - 8011:80
     networks:
       - symfony
 
