@@ -2,7 +2,7 @@
 
 namespace App\Tests;
 
-use App\Integration\JsonParser;
+use App\Integration\Parser\JsonParser;
 use PHPUnit\Framework\TestCase;
 
 class JsonParserTest extends TestCase

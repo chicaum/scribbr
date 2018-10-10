@@ -2,10 +2,10 @@
 
 namespace App\Tests;
 
-use App\Integration\CsvParser;
-use App\Integration\JsonParser;
-use App\Integration\ParserFactory;
-use App\Integration\XmlParser;
+use App\Integration\Parser\CsvParser;
+use App\Integration\Parser\JsonParser;
+use App\Integration\Parser\ParserFactory;
+use App\Integration\Parser\XmlParser;
 use PHPUnit\Framework\TestCase;
 
 class ParserFactoryTest extends TestCase

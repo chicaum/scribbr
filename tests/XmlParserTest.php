@@ -2,7 +2,7 @@
 
 namespace App\Tests;
 
-use App\Integration\XmlParser;
+use App\Integration\Parser\XmlParser;
 use PHPUnit\Framework\TestCase;
 
 class XmlParserTest extends TestCase

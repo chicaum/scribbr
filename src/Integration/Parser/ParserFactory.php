@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Integration;
+namespace App\Integration\Parser;
 
 class ParserFactory
 {
-    private const CSV_TYPE = 'csv';
-    private const JSON_TYPE = 'json';
-    private const XML_TYPE = 'xml';
+    public const CSV_TYPE = 'csv';
+    public const JSON_TYPE = 'json';
+    public const XML_TYPE = 'xml';
 
     public function factory(string $type): Parser
     {

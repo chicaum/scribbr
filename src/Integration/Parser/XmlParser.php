@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Integration;
+namespace App\Integration\Parser;
 
 class XmlParser implements Parser
 {

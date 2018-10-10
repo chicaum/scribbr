@@ -2,7 +2,7 @@
 
 namespace App\Tests;
 
-use App\Integration\CsvParser;
+use App\Integration\Parser\CsvParser;
 use PHPUnit\Framework\TestCase;
 
 class CsvParserTest extends TestCase
