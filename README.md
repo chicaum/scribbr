@@ -52,10 +52,9 @@ CONTAINER ID        IMAGE                                   COMMAND             
 b9eac2e09f06        mysql:5.6                               "docker-entrypoint.s…"   About an hour ago   Up 6 minutes        0.0.0.0:3311->3306/tcp              scribbr_db_1
 ```
 
-Access the fpm container 'docker exec -it <CONTAINER-ID>' bash
-Execute the migrations command
+Execute the migrations command that will setup the database
 ```
-php bin/console doctrine:migrations:migrate --no-interaction
+docker exec <CONTAINER-ID> php bin/console doctrine:migrations:migrate --no-interaction
 ```
 
 ## Access the application
