@@ -5,7 +5,7 @@ namespace App\Integration;
 class XmlParser implements Parser
 {
 
-    public function parse(string $input): array
+    public function parse(string $input)
     {
         $parsedLines = [];
 

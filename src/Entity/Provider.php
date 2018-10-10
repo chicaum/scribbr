@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -32,11 +34,17 @@ class Provider
     private $active;
 
     /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Prediction", mappedBy="provider")
+     */
+    private $predictions;
+
+    /**
      * Provider constructor.
      */
     public function __construct()
     {
         $this->active = true;
+        $this->predictions = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -76,6 +84,37 @@ class Provider
     public function setActive(bool $active): self
     {
         $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Prediction[]
+     */
+    public function getPredictions(): Collection
+    {
+        return $this->predictions;
+    }
+
+    public function addPrediction(Prediction $prediction): self
+    {
+        if (!$this->predictions->contains($prediction)) {
+            $this->predictions[] = $prediction;
+            $prediction->setProvider($this);
+        }
+
+        return $this;
+    }
+
+    public function removePrediction(Prediction $prediction): self
+    {
+        if ($this->predictions->contains($prediction)) {
+            $this->predictions->removeElement($prediction);
+            // set the owning side to null (unless already changed)
+            if ($prediction->getProvider() === $this) {
+                $prediction->setProvider(null);
+            }
+        }
 
         return $this;
     }

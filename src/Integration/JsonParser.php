@@ -4,8 +4,21 @@ namespace App\Integration;
 
 class JsonParser implements Parser
 {
-    public function parse(string $input): array
+    const OPTION_ASSOC_TRUE = true;
+    const OPTION_ASSOC_FALSE = false;
+
+    /**
+     * @var bool
+     */
+    private $assoc;
+
+    public function __construct(bool $assoc = true)
     {
-        return \json_decode($input, true);
+        $this->$assoc = $assoc;
+    }
+
+    public function parse(string $input)
+    {
+        return \json_decode($input, $this->assoc);
     }
 }
