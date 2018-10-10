@@ -42,16 +42,26 @@ Start the container
 ```
 docker-compose up -d
 ```
+
+##Prepare the database
+Execute a 'docker ps' command and get the fpm container ID
+```
+CONTAINER ID        IMAGE                                   COMMAND                  CREATED             STATUS              PORTS                               NAMES
+4e34abb66618        scribbr_fpm                             "docker-php-entrypoi…"   6 minutes ago       Up 6 minutes        9000/tcp                            scribbr_fpm_1
+25f71e8be24a        scribbr_nginx                           "nginx -g 'daemon of…"   6 minutes ago       Up 6 minutes        0.0.0.0:8011->80/tcp                scribbr_nginx_1
+b9eac2e09f06        mysql:5.6                               "docker-entrypoint.s…"   About an hour ago   Up 6 minutes        0.0.0.0:3311->3306/tcp              scribbr_db_1
+```
+
+Access the fpm container 'docker exec -it <CONTAINER-ID>' bash
+Execute the migrations command
+```
+php bin/console doctrine:migrations:migrate --no-interaction
+```
+
 ## Access the application
 
 ```
 http://localhost:8011
-```
-
-## Access the application documentation
-
-```
-http://localhost:8011/admin/
 ```
 
 ## Database access - MySQL 5.6

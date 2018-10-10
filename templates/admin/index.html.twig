@@ -4,6 +4,7 @@
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .bold {font-weight: bold; }
 </style>
 
 <div class="example-wrapper">
@@ -11,7 +12,7 @@
     <ul style="list-style-type:none">
         <li>Managing Provider
             <ul style="list-style-type:none">
-                <li>Show All Providers.</li>
+                <li class="bold">Show All Providers.</li>
                 <li>URL : /admin/provider-list</li>
                 <li>Method : GET</li>
                 <li>URL Params : None</li>
@@ -50,7 +51,7 @@
                     </ul>
                 </li>
                 <li>&nbsp;</li>
-                <li>Add a new Provider.</li>
+                <li class="bold">Add a new Provider.</li>
                 <li>URL : /admin/provider-add/{name}/{type}</li>
                 <li>Method : GET</li>
                 <li>URL Params : Required: name=[string] AND Required: type=[csv|xml|json]</li>
@@ -64,7 +65,7 @@
                     </ul>
                 </li>
                 <li>&nbsp;</li>
-                <li>Remove a Provider.</li>
+                <li class="bold">Remove a Provider.</li>
                 <li>URL : /admin/provider-remove/{id}</li>
                 <li>Method : GET</li>
                 <li>URL Params : Required: id=[integer]</li>
