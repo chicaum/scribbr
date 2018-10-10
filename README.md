@@ -95,7 +95,19 @@ port: 3311
  
 ## Running the tests
 
-Todo
+```
+./bin/phpunit
+
+#!/usr/bin/env php
+PHPUnit 6.5.13 by Sebastian Bergmann and contributors.
+
+Testing Project Test Suite
+...........                                                       11 / 11 (100%)
+
+Time: 234 ms, Memory: 4.00MB
+
+OK (11 tests, 41 assertions)
+```
 
 ## Built With
 
