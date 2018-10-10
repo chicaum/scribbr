@@ -4,10 +4,11 @@ namespace App\Integration\Hydrator;
 
 use App\Entity\Provider;
 
-class CsvHydrator implements HydratorInterface
+class XmlHydrator implements HydratorInterface
 {
     public function hydrate($contents): Provider
     {
         // TODO: Implement hydrate() method.
+        return new Provider();
     }
 }

@@ -54,7 +54,7 @@ class IntegratorController extends AbstractController
             'integrator' => \get_class($this->integrator),
             'filePath' => $filePath,
             'fileName' => $fileName,
-            'contents' => $r,
+            'contents' => get_class($r),
         ]);
     }
 }
