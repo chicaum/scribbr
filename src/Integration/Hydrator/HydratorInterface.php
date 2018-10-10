@@ -6,5 +6,5 @@ use App\Entity\Provider;
 
 interface HydratorInterface
 {
-    public function hydrate($contents): Provider;
+    public function hydrate($provider, $parsedContent);
 }

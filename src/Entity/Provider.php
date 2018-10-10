@@ -34,7 +34,8 @@ class Provider
     private $active;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Prediction", mappedBy="provider")
+     * @ORM\OneToMany(targetEntity="App\Entity\Prediction",
+     *     mappedBy="provider", cascade={"persist"})
      */
     private $predictions;
 

@@ -2,6 +2,7 @@
 
 namespace App\Integration;
 
+use App\Entity\Provider;
 use App\Integration\Hydrator\Context;
 use App\Integration\Parser\ParserFactory;
 use Symfony\Component\Filesystem\Filesystem;
@@ -22,17 +23,21 @@ class Integrator
         $this->parserFactory = new ParserFactory();
     }
 
-    public function integrate(string $filePath, string $fileName, string $type)
-    {
+    public function integrate(
+        Provider $provider,
+        string $type,
+        string $filePath,
+        string $fileName
+    ) {
         $fileContents = $this->getFileContents($filePath, $type);
 
         $parser = $this->parserFactory->factory($type);
         $parsed = $parser->parse($fileContents);
 
         $context = new Context($type);
-        $provider = $context->executeStrategy($parsed);
+        $context->executeStrategy($provider, $parsed);
 
-        $this->moveFile($filePath, $fileName);
+       // $this->moveFile($filePath, $fileName);
 
         return $provider;
     }

@@ -56,6 +56,28 @@ Execute the migrations command that will setup the database
 ```
 docker exec <CONTAINER-ID> php bin/console doctrine:migrations:migrate --no-interaction
 ```
+## Usage
+## Step 1 - Adding partners
+At this point the database is empty.
+
+Please use the endpoint `/admin/provider-add/{name}/{type}` to add new providers
+
+Eg: Add the provider "BBC" with file type "csv"
+
+`curl http://localhost:8011/admin/provider-add/bbc/csv`
+
+Also, the data from partners must be mocked, please add a new folder for each partner and put the its files inside:
+
+/src/Integration/Data/<provider-name>  The folder name must be with lowercases 
+
+## Step 2 - Integration of partners data
+
+Please use the endpoint `/integrator/{partner-id}/{type}` to import a data file
+
+Eg: Importing data from partner "BBC" with file type "csv"
+
+`curl http://localhost:8011/integrator/1/csv`
+
 
 ## Access the application
 

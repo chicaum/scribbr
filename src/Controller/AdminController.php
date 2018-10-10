@@ -59,9 +59,19 @@ class AdminController extends AbstractController
      */
     public function list(ProviderRepository $providerRepository) : Response
     {
+        $providersList = [];
+        $providers = $providerRepository->findAll();
+        foreach ($providers as $provider) {
+            $providersList[] = [
+                'id' => $provider->getId(),
+                'name' => $provider->getName(),
+                'type' => $provider->getType(),
+            ];
+        }
+
         return $this->json([
             'message' => 'Provider List',
-            ['providers' => $providerRepository->findAll()]
+            'providers' => $providersList
         ]);
     }
 }

@@ -13,10 +13,10 @@
         <li>Managing Provider
             <ul style="list-style-type:none">
                 <li class="bold">Show All Providers.</li>
-                <li>URL : /admin/provider-list</li>
+                <li>URL : /provider-list</li>
                 <li>Method : GET</li>
                 <li>URL Params : None</li>
-                <li>Sample Request : curl http://localhost:8011/admin/provider-list/</li>
+                <li>Sample Request : curl http://localhost:8011/provider-list/</li>
                 <li>Sample Response:
                     <ul style="list-style-type:none">
                         <li>Status code: 200</li>
@@ -52,10 +52,10 @@
                 </li>
                 <li>&nbsp;</li>
                 <li class="bold">Add a new Provider.</li>
-                <li>URL : /admin/provider-add/{name}/{type}</li>
+                <li>URL : /provider-add/{name}/{type}</li>
                 <li>Method : GET</li>
                 <li>URL Params : Required: name=[string] AND Required: type=[csv|xml|json]</li>
-                <li>Sample Request : curl http://localhost:8011/admin/provider-add/Weather.com/xml</li>
+                <li>Sample Request : curl http://localhost:8011/provider-add/Weather.com/xml</li>
                 <li>Sample Response:
                     <ul style="list-style-type:none">
                         <li>Status code: 200</li>
@@ -66,15 +66,29 @@
                 </li>
                 <li>&nbsp;</li>
                 <li class="bold">Remove a Provider.</li>
-                <li>URL : /admin/provider-remove/{id}</li>
+                <li>URL : /provider-remove/{id}</li>
                 <li>Method : GET</li>
                 <li>URL Params : Required: id=[integer]</li>
-                <li>Sample Request : curl http://localhost:8011/admin/provider-remove/2</li>
+                <li>Sample Request : curl http://localhost:8011/provider-remove/2</li>
                 <li>Sample Response:
                     <ul style="list-style-type:none">
                         <li>Status code: 200</li>
                         <li>
                             {"message":"Provider removed","name":"Weather.com"}
+                        </li>
+                    </ul>
+                </li>
+                <li>&nbsp;</li>
+                <li class="bold">Import data from a Provider.</li>
+                <li>URL : /integrator/{id}/{type}</li>
+                <li>Method : GET</li>
+                <li>URL Params : Required: id=[integer], type=[string]</li>
+                <li>Sample Request : curl http://localhost:8011/integrator/1/csv</li>
+                <li>Sample Response:
+                    <ul style="list-style-type:none">
+                        <li>Status code: 200</li>
+                        <li>
+                            {"message":"Data successfully loaded"}
                         </li>
                     </ul>
                 </li>

@@ -24,8 +24,8 @@ class Context
         }
     }
 
-    public function executeStrategy($contents): Provider
+    public function executeStrategy($provider, $contents)
     {
-        return $this->hydrator->hydrate($contents);
+        $this->hydrator->hydrate($provider, $contents);
     }
 }
