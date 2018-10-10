@@ -26,8 +26,8 @@ class CsvParserTest extends TestCase
         $parser = new CsvParser(false);
         $parsed = $parser->parse($csv);
 
-        $this->assertCount(12, $parsed);
-        $this->assertArraySubset(
+        static::assertCount(12, $parsed);
+        static::assertArraySubset(
             [['-scale', 'city', 'date', 'prediction__time', 'prediction__value']],
             $parsed
         );
