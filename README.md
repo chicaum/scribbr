@@ -66,7 +66,7 @@ Eg: Add the provider "BBC" with file type "csv"
 
 `curl http://localhost:8011/admin/provider-add/bbc/csv`
 
-Also, the data from partners must be mocked, please add a new folder for each partner and put the its files inside:
+Also, the data from partners must be mocked, please add a new folder for each partner and put the files inside:
 
 /src/Integration/Data/<provider-name>  The folder name must be with lowercases 
 
