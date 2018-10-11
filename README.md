@@ -60,7 +60,7 @@ docker exec <CONTAINER-ID> php bin/console doctrine:migrations:migrate --no-inte
 ## Step 1 - Adding partners
 At this point the database is empty.
 
-Please use the endpoint `/admin/provider-add/{name}/{type}` to add new providers
+Please use the endpoint `/admin/provider-add/{name}/{type}` to add new providers. It's easy!
 
 Eg: Add the provider "BBC" with file type "csv"
 

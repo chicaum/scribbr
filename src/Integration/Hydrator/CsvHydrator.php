@@ -9,7 +9,7 @@ class CsvHydrator implements HydratorInterface
 {
     public function hydrate($provider, $parsedContent)
     {
-        $scale = $parsedContent[0][0];
+        $scale = strtolower($parsedContent[0][0]);
         $city = $parsedContent[0][1];
         $date = \DateTimeImmutable::createFromFormat('Ymd', $parsedContent[0][2]);
         $expires = \DateTimeImmutable::createFromMutable(new \DateTime('+ 1 minute'));

@@ -10,7 +10,7 @@
 <div class="example-wrapper">
     <h2>API documentation</h2>
     <ul style="list-style-type:none">
-        <li>Managing Provider
+        <li><span class="bold">Managing Provider</span>
             <ul style="list-style-type:none">
                 <li class="bold">Show All Providers.</li>
                 <li>URL : /provider-list</li>
@@ -94,7 +94,16 @@
                 </li>
             </ul>
         </li>
+        <li><span class="bold">Retrieving forecast</span>
+            <ul style="list-style-type:none">
+                <li class="bold">Showing foreast</li>
+                <li>URL : /forecast/show/{city}/{date}</li>
+                <li>Method : GET</li>
+                <li>URL Params : Required: city=[string], date=[string]</li>
+                <li>Sample Request : curl localhost:8011/forecast/show/Amsterdam/2018-10-15</li>
+                <li>&nbsp;</li>
+            </ul>
+        </li>
     </ul>
-
 </div>
 {% endblock %}

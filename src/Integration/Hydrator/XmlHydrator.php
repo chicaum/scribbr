@@ -14,7 +14,7 @@ class XmlHydrator implements HydratorInterface
 
         foreach ($parsedContent->prediction as $partnerPrediction) {
             $prediction = new Prediction();
-            $prediction->setScale($parsedContent['scale']);
+            $prediction->setScale(strtolower($parsedContent['scale']));
             $prediction->setCity($parsedContent->city);
             $prediction->setDate($date);
             $time = \DateTimeImmutable::createFromFormat('H:i', $partnerPrediction->time);

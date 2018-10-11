@@ -3,13 +3,12 @@
 namespace App\Integration\Hydrator;
 
 use App\Entity\Prediction;
-use App\Entity\Provider;
 
 class JsonHydrator implements HydratorInterface
 {
     public function hydrate($provider, $parsedContent)
     {
-        $scale = $parsedContent->predictions->{'-scale'};
+        $scale = strtolower($parsedContent->predictions->{'-scale'});
         $city = $parsedContent->predictions->{'city'};
         $date = \DateTimeImmutable::createFromFormat('Ymd', $parsedContent->predictions->{'date'});
         $expires = \DateTimeImmutable::createFromMutable(new \DateTime('+ 1 minute'));

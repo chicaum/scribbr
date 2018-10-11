@@ -19,32 +19,19 @@ class PredictionRepository extends ServiceEntityRepository
         parent::__construct($registry, Prediction::class);
     }
 
-//    /**
-//     * @return Prediction[] Returns an array of Prediction objects
-//     */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return Prediction[] Returns an array of Prediction objects
+     */
+    public function findByCityAndDate($city, $date)
     {
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
+            ->andWhere('p.city = :val1')
+            ->setParameter('val1', $city)
+            ->andWhere('p.date = :val2')
+            ->setParameter('val2', $date)
+            ->orderBy('p.time', 'ASC')
             ->getQuery()
             ->getResult()
         ;
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Prediction
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests;
+namespace App\Tests\Integration\Parser;
 
 use App\Integration\Parser\CsvParser;
 use PHPUnit\Framework\TestCase;
