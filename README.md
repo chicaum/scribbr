@@ -54,11 +54,18 @@ b9eac2e09f06        mysql:5.6                               "docker-entrypoint.s
 
 Execute the migrations command that will setup the database
 ```
-docker exec <CONTAINER-ID> php bin/console doctrine:migrations:migrate --no-interaction
+docker exec <FPM-CONTAINER-ID> php bin/console doctrine:migrations:migrate --no-interaction
 ```
 ## Usage
-## Step 1 - Adding partners
 At this point the database is empty.
+It is possible to load fixtures into database or create and import data through the API
+##Load Fixtures
+Execute the load fixtures command that will populate the database
+```
+docker exec <FPM-CONTAINER-ID> php bin/console doctrine:fixtures:load --append
+```
+
+## Step 1 - Adding partners
 
 Please use the endpoint `/admin/provider-add/{name}/{type}` to add new providers. It's easy!
 
